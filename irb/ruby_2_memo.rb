@@ -105,3 +105,67 @@ puts "10 ============================="
 
 # 小数第3位まで数字を表示させたい場合
 puts sprintf("%0.3f", 1.2)
+
+
+puts "11 =============================" 
+
+def greeting(country)
+# countryがnilならreturnする
+  country or return "国名を入力してください"
+
+  if country == "japan"
+    "こんにちは"
+  elsif country == "USA"
+    "hello"
+  end
+end
+
+puts greeting("japan") # =>こんにちは
+puts greeting(nil) # =>国名を入力してください
+
+
+puts "12 =============================" 
+# country = "japan"
+
+# case country
+#   when "japan"
+#     puts "こんにちは"
+#   when "USA"
+#     puts "hello"
+# end
+
+
+puts "13 =============================" 
+# country = "USA"
+# greeting = country == "japan" ? "こんにちは" : "???"
+# puts greeting
+
+
+puts "14 =============================" 
+def greeting(country = "japan")
+  if country == "japan"
+    "こんにちは"
+  elsif country == "USA"
+    "hello"
+  end
+end
+
+puts greeting() # =>こんにちは
+
+
+puts "15 =============================" 
+def multiple_of_two?(n)
+  n % 2 ==0
+end
+
+multiple_of_two?(4) # =>ture
+
+puts "16 =============================" 
+def nanoda!(s)
+  s.insert(-1, "なのだ").upcase!
+end
+
+s = "ruby"
+puts nanoda!(s) # =>RUBYなのだ
+puts s # =>RUBYなのだ
+
